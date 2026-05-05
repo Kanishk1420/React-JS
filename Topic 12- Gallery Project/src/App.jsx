@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "./components/Card";
 import axios from "axios";
 const App = () => {
   const [Userdata, setuserdata] = useState([]);
@@ -23,16 +24,7 @@ const App = () => {
     printuserdata = Userdata.map((elem, idx) => {
       return (
         <div key={idx}>
-          <a href={elem.url} target="_blank">
-            <div className="h-40 w-44 bg-white rounded-xl overflow-hidden">
-              <img
-                src={elem.download_url}
-                alt={elem.url}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <h2 className="font-bold text-lg">{elem.author}</h2>
-          </a>
+          <Card elem={elem} />
         </div>
       );
     });
@@ -42,6 +34,7 @@ const App = () => {
       <div className="flex h-[82%] flex-wrap gap-4 p-2">{printuserdata}</div>
       <div className="flex justify-center items-center p-4 gap-6">
         <button
+        style={{opacity:page == 1 ?0.5 : 1}}
           className="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer"
           onClick={() => {
             if (page > 1) {
