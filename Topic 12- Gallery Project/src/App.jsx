@@ -7,7 +7,7 @@ const App = () => {
 
   const getData = async () => {
     const response = await axios.get(
-      `https://picsum.photos/v2/list?page=${page}&limit=30`,
+      `https://picsum.photos/v2/list?page=${page}&limit=20`,
     );
     setuserdata(response.data);
   };
@@ -16,7 +16,7 @@ const App = () => {
   }, [page]);
 
   let printuserdata = (
-    <h3 className="text-gray-400 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <h3 className="text-gray-400 text-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       Loading ...
     </h3>
   );
@@ -34,7 +34,7 @@ const App = () => {
       <div className="flex h-[82%] flex-wrap gap-4 p-2">{printuserdata}</div>
       <div className="flex justify-center items-center p-4 gap-6">
         <button
-        style={{opacity:page == 1 ?0.5 : 1}}
+          style={{ opacity: page == 1 ? 0.5 : 1, cursor: page == 1 ? "not-allowed" : "pointer" }}
           className="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer"
           onClick={() => {
             if (page > 1) {
