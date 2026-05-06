@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Contact = () => {
+const Notfound = () => {
   return (
     <div className='flex justify-center items-center h-155 text-3xl font-bold'>
-    <h1>Contact</h1>
+      <h1>404 Not Found </h1>
     </div>
   )
 }
 
-export default Contact
+export default Notfound
