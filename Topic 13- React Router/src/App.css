@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
-    font-family: 'helvetica neue';
 }
 html,
 body {
@@ -36,4 +35,7 @@ h1{
     display: flex;
     align-items: center;
     gap: 40px;
+}
+div {
+  font-size: large;
 }
