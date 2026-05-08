@@ -5,12 +5,13 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import './App.css'
-import './index.css'
 import Notfound from './pages/Notfound'
 import Product from './pages/Product'
 import Men from './pages/Men'
 import Womens from './pages/Womens'
+import Kids from './pages/Kids'
+import './App.css'
+import './index.css'
 const App = () => {
   return (
     <div>
@@ -21,7 +22,8 @@ const App = () => {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/product' element={<Product/>}> {/* this is a parent route because it has child routes */}
         <Route path='men' element={<Men/>}/> 
-        <Route path='women' element={<Womens/>}/>
+        <Route path='women' element={<Womens/>}/> 
+        <Route path='kids' element={<Kids/>}/>
         </Route>
         <Route path='*'element={<Notfound/>}/> {/* * is used to match any route that is not defined in the application like if you enter any invalid route then it will show this page */}
       </Routes>
