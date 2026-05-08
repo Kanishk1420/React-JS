@@ -7,7 +7,8 @@ const Navbar = () => {
         <Link to= '/'>Home</Link> {/* Link is used to navigate to different routes in the application unlike ancor tag a the page will not reload fully */}
         <Link to='/about'>About</Link>
         <Link to= '/contact'>Contact</Link>
-        <Link to= '/product'>Product</Link>
+        <Link to= '/product'>Nested</Link>
+        <Link to= '/courses'>Dynamic</Link>
       </div>
     </div>
   )

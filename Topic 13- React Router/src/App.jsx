@@ -10,8 +10,10 @@ import Product from './pages/Product'
 import Men from './pages/Men'
 import Womens from './pages/Womens'
 import Kids from './pages/Kids'
+import Courses from './pages/Courses'
 import './App.css'
 import './index.css'
+import CourseDetails from './pages/CourseDetails'
 const App = () => {
   return (
     <div>
@@ -25,6 +27,8 @@ const App = () => {
         <Route path='women' element={<Womens/>}/> 
         <Route path='kids' element={<Kids/>}/>
         </Route>
+        <Route path='/courses' element={<Courses/>}/>
+        <Route path= '/courses/:id' element= {<CourseDetails/>}/> {/* :id is a dynamic parameter that can be used to pass data to the component */}
         <Route path='*'element={<Notfound/>}/> {/* * is used to match any route that is not defined in the application like if you enter any invalid route then it will show this page */}
       </Routes>
       <Footer/>
