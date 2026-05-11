@@ -1,13 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Themecontext from './context/Themecontext.jsx'
+import './index.css'
+import ThemeContext from './context/ThemeContext.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Themecontext>
-    <App />
-    </Themecontext>
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <ThemeContext>
+      <App />
+    </ThemeContext>
 )

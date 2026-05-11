@@ -1,19 +1,16 @@
-import React from 'react'
+import { useContext } from 'react'
 import Nav2 from './Nav2'
-import {useContext} from 'react'
-import { Themedatacontext } from '../context/Themecontext'
+import { ThemeDataContext } from '../context/ThemeContext'
 
 const Navbar = () => {
 
-  const value = useContext(Themedatacontext) // 3. Using useContext hook to consume the context value in any child component
-  console.log(value);
-   
-  return (
-    <div className='nav'>
-      <h1>{value}</h1>
-      <Nav2/>
-    </div>
-  )
+    const [theme] = useContext(ThemeDataContext) // 4. Using the useContext hook to consume the context value in the component
+    return (
+        <div className={theme}>
+            <h2>Current Theme:- {theme}</h2>
+            <Nav2 />
+        </div>
+    )
 }
 
 export default Navbar
