@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
@@ -8,6 +8,7 @@ import {
 } from "./redux/features/counterslice";
 
 const App = () => {
+  const [num, setnum] = useState(5);
   const dispatch = useDispatch(); // 3. Get the dispatch function from the Redux store to dispatch actions.
   const count = useSelector((state) => state.counter.value); // 4. Show the dispactch value in Ui.
   return (
@@ -31,7 +32,7 @@ const App = () => {
       </button>
       <button
         onClick={() => {
-          dispatch(incrementbyAmount(10));
+          dispatch(incrementbyAmount(num));
         }}
       >
         Increase by Amount
@@ -43,6 +44,13 @@ const App = () => {
       >
         Decrease by Amount
       </button>
+      <input
+        type="number"
+        value={num}
+        onChange={(e) => {
+          setnum(Number(e.target.value)); // two-way-binding here we are converting the num value from string to number because the value of input is always a string and we want to pass a number to the incrementbyAmount action.
+        }}
+      />
     </div>
   );
 };
