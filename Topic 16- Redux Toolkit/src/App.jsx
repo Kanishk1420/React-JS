@@ -5,8 +5,8 @@ import {
   decrementbyAmount,
   increment,
   incrementbyAmount,
-  themeToggle,
 } from "./redux/features/counterslice";
+import { themeToggle } from "./redux/features/themeslice";
 
 const App = () => {
   const [num, setnum] = useState(5);

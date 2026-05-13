@@ -29,20 +29,9 @@ export const counterSlice = createSlice({
     },
   },
 });
-export const themeSlice = createSlice({
-  name: "theme",
-  initialState: {
-    theme: "light",
-  },
-  reducers: {
-    themeToggle: (state) => {
-      state.theme = state.theme === "light" ? "black" : "light";
-    },
-  },
-});
+
 
 export const { increment, decrement, incrementbyAmount, decrementbyAmount } =
   counterSlice.actions;
-export const { themeToggle } = themeSlice.actions;
 export default counterSlice.reducer;
-export const themeReducer = themeSlice.reducer;
+
