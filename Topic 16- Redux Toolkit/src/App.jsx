@@ -5,12 +5,14 @@ import {
   decrementbyAmount,
   increment,
   incrementbyAmount,
+  themeToggle,
 } from "./redux/features/counterslice";
 
 const App = () => {
   const [num, setnum] = useState(5);
   const dispatch = useDispatch(); // 3. Get the dispatch function from the Redux store to dispatch actions.
   const count = useSelector((state) => state.counter.value); // 4. Show the dispactch value in Ui.
+  const mode = useSelector((state) => state.theme.theme);
   return (
     <div>
       <h1>{count}</h1>
@@ -51,6 +53,14 @@ const App = () => {
           setnum(Number(e.target.value)); // two-way-binding here we are converting the num value from string to number because the value of input is always a string and we want to pass a number to the incrementbyAmount action.
         }}
       />
+      <h1>Current Theme: {mode}</h1>
+      <button
+        onClick={() => {
+          dispatch(themeToggle());
+        }}
+      >
+        Change theme
+      </button>
     </div>
   );
 };
