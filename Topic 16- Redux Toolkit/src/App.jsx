@@ -59,7 +59,7 @@ const App = () => {
           dispatch(themeToggle());
         }}
       >
-        Change theme
+        Change theme to {mode === "light" ? "dark" : "light"}
       </button>
     </div>
   );
