@@ -7,6 +7,7 @@ const Practicehooks = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Username:", name.current.value);
+    name.current.value = '';
   };
   return (
     <div>

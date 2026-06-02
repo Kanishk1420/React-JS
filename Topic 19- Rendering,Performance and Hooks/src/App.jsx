@@ -1,13 +1,15 @@
 import React from 'react'
 import {UseRefs}  from './hooks/useRefs/index'
 import Index from './hooks/useId/index'
-import Practicehooks from './hooks/practice/practicehooks'
+import Countdown from './hooks/practice/Countdown'
+import HistorySearch from './hooks/practice/HistorySearch'
 const App = () => {
   return (
     <div>
       <UseRefs/>
       <Index/>
-      <Practicehooks/>
+      <Countdown/>
+      <HistorySearch/>
     </div>
   )
 }
