@@ -1,17 +1,23 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, useRef, useId } from "react";
 export const useCountdown = (initial) => {
+  const username = useId();
+  const name = useRef("");
   const [count, setcount] = useState(initial);
-  const [isActive, setIsActive] = useState(false); 
-   const startCountdown = () => {
-      setIsActive(true);
-    };
-    const stopCountdown = () => {
-      setIsActive(false);
-      setcount(initial);
-    };
+  const [isActive, setIsActive] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Username:", name.current.value);
+    name.current.value = "";
+  };
+  const startCountdown = () => {
+    setIsActive(true);
+  };
+  const stopCountdown = () => {
+    setIsActive(false);
+    setcount(initial);
+  };
 
-    useEffect(() => {
+  useEffect(() => {
     let intervalId;
     if (isActive && count > 0) {
       intervalId = setInterval(() => {
@@ -29,5 +35,13 @@ export const useCountdown = (initial) => {
       alert("Countdown finished!");
     }
   }, [count, isActive]);
-  return { count, startCountdown, stopCountdown, isActive };   
+  return {
+    count,
+    startCountdown,
+    stopCountdown,
+    isActive,
+    handleSubmit,
+    name,
+    username,
+  };
 };

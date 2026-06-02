@@ -1,8 +1,6 @@
-import { useId } from 'react';
 import { useSet } from '../useSet';
 const HistorySearch = () => {
- const searchId = useId();
- const {handleSubmit, storedSearches, clearHistory, clearHistorybyone, searchinput} = useSet();
+ const {handleSubmit, storedSearches, clearHistory, clearHistorybyone, searchinput, searchId} = useSet();
   return (
     <div>
       <form onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useId } from "react";
 export const useSet = () => {
   const searchinput = useRef("");
+  const searchId = useId();
   const [storedSearches, setStoredSearches] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,5 +43,6 @@ export const useSet = () => {
     clearHistory,
     clearHistorybyone,
     searchinput,
+    searchId,
   };
 };

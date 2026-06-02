@@ -1,14 +1,6 @@
-import { useId, useRef } from "react";
 import { useCountdown } from "../useCountdown";
 const Practicehooks = () => {
-  const username = useId();
-  const name = useRef("");
-  const { count, startCountdown, stopCountdown } = useCountdown(10);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Username:", name.current.value);
-    name.current.value = '';
-  };
+  const { count, startCountdown, stopCountdown, handleSubmit, name, username} = useCountdown(10);
   return (
     <div>
       <form onSubmit={handleSubmit}>
