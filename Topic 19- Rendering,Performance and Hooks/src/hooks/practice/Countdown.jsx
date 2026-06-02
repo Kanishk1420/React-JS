@@ -1,4 +1,4 @@
-import { useCountdown } from "../useCountdown";
+import { useCountdown } from "../custom hooks/useCountdown";
 const Practicehooks = () => {
   const { count, startCountdown, stopCountdown, handleSubmit, name, username} = useCountdown(10);
   return (

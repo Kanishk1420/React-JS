@@ -1,4 +1,4 @@
-import { useSet } from '../useSet';
+import { useSet } from '../custom hooks/useSet';
 const HistorySearch = () => {
  const {handleSubmit, storedSearches, clearHistory, clearHistorybyone, searchinput, searchId} = useSet();
   return (
