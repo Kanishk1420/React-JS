@@ -4,6 +4,7 @@ import Index from './hooks/useId/index'
 import Countdown from './hooks/practice/Countdown'
 import HistorySearch from './hooks/practice/HistorySearch'
 import  ReactMemo  from './hooks/memo/ReactMemo'
+import MemoParentComponent from './hooks/memo/UseMemo'
 const App = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const App = () => {
       <Countdown/>
       <HistorySearch/>
       <ReactMemo/>
+      <MemoParentComponent/>
     </div>
   )
 }

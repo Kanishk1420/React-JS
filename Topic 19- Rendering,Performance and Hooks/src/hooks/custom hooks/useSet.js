@@ -16,7 +16,7 @@ export const useSet = () => {
   useEffect(() => {
     const storedSearchesFromLocalStorage = JSON.parse(
       localStorage.getItem("searchHistory"),
-    );
+    ) || [];
     setStoredSearches(storedSearchesFromLocalStorage);
   }, []);
   useEffect(() => {
