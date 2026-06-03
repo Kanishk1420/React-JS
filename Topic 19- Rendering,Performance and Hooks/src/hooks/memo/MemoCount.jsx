@@ -1,6 +1,6 @@
 import {useRef, memo} from 'react'
 
-const MemoCount = () => {
+const MemoCount = (props) => {
   const renderCount = useRef(0);
   console.log(renderCount);
   return (
