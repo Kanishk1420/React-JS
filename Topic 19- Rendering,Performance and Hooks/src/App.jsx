@@ -6,6 +6,7 @@ import HistorySearch from './hooks/practice/HistorySearch'
 import  ReactMemo  from './hooks/memo/ReactMemo'
 import MemoParentComponent from './hooks/memo/UseMemo'
 import UseCallback from './hooks/memo/UseCallback'
+import Shopping from './hooks/practice/Shopping'
 const App = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const App = () => {
       <ReactMemo/>
       <MemoParentComponent/>
       <UseCallback/>
+      <Shopping/>
     </div>
   )
 }
