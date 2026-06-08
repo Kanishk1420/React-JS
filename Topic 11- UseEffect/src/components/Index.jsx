@@ -18,7 +18,7 @@ const Index = () => {
       };
     },
     [
-      /* dependencies */
+      /* dependencies tells React when to run your code if the value of the vairables which you entered the array got changed then this part of code will run then.*/
     ],
   );
   useEffect(() => {

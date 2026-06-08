@@ -7,6 +7,7 @@ import  ReactMemo  from './hooks/memo/ReactMemo'
 import MemoParentComponent from './hooks/memo/UseMemo'
 import UseCallback from './hooks/memo/UseCallback'
 import Shopping from './hooks/practice/Shopping'
+import Leaderboard from './hooks/practice/Leaderboard'
 const App = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ const App = () => {
       <MemoParentComponent/>
       <UseCallback/>
       <Shopping/>
+      <Leaderboard/>
     </div>
   )
 }
