@@ -24,6 +24,7 @@ const PlayerList = memo(({ players, onKickPlayer }) => {
 const Leaderboard = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [submittedSearch, setSubmittedSearch] = useState("");
   const [players, setPlayers] = useState([
     { id: 1, name: "Alice", score: 1200 },
     { id: 2, name: "Bob", score: 950 },
@@ -43,16 +44,23 @@ const Leaderboard = () => {
  const handleRestorePlayers = useCallback(() => {
     setPlayers(players);
   }, []);
+  const topPlayerName = topPlayers.length > 0 ? topPlayers[0].name : null;
+
   const logTopPlayer = useCallback(() => {
-    if (topPlayers.length > 0) {
-      console.log(`Ping Analytics: Current #1 is ${topPlayers[0].name}`);
+    if (topPlayerName) {
+      console.log(`Ping Analytics: Current #1 is ${topPlayerName}`);
     }
-  }, []);
+  }, [topPlayerName]);
 
 useEffect(() => {
   logTopPlayer();
 }, [logTopPlayer]);
 
+const submit = (e) => {
+  e.preventDefault();
+  setSubmittedSearch(searchQuery);
+  console.log(`Search submitted for: ${searchQuery}`);
+}
   return (
     <div
       style={{
@@ -67,7 +75,7 @@ useEffect(() => {
 
       <button onClick={() => setIsDarkMode(!isDarkMode)}>Toggle Theme</button>
 
-      <div style={{ marginTop: "15px" }}>
+      <form style={{ marginTop: "15px" }} onSubmit={submit}>
         <input
           type="text"
           placeholder="Search coders..."
@@ -75,7 +83,7 @@ useEffect(() => {
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{ padding: "8px", width: "200px" }}
         />
-      </div>
+      </form>
       <PlayerList players={topPlayers} onKickPlayer={handleKickPlayer} />
       <button onClick={handleRestorePlayers}>Restore All Players</button>
     </div>
