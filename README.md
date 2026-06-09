@@ -1,8 +1,8 @@
 # Topic to be left 
 
 1. React Router
-- Navlink
-- useSearchParams
+- Navlink ✅
+- useSearchParams and setSearchParams ✅
 - useLocation
 - <Navigate/> component
 - Protected Routes
