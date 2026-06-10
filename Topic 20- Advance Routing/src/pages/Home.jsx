@@ -27,6 +27,9 @@ const Home = () => {
         <NavLink to="/" style={activeLinkStyle}>
           Go back
         </NavLink>
+         <NavLink to="/dashboard" style={activeLinkStyle}>
+          Dashboard
+        </NavLink>
       </nav>
       <Outlet />
     </div>

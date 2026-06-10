@@ -1,8 +1,11 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import { useMyLocation } from './components/uselocation'
+import DashboardLayout from './practice/DashboardLayout'
+import Courses from './practice/Courses'
+import { CourseDetails } from './practice/CourseDetails'
 const App = () => {
 const location = useMyLocation();
   return (
@@ -14,6 +17,14 @@ const location = useMyLocation();
         <Route path='/my' element={<h1>Welcome to my page and pathname is {location} </h1>}/>
         <Route path='/About' element={<h1>Welcome to about page and pathname is {location}</h1>}/>
         <Route path='/Courses' element={<h1>Welcome to Courses page and pathname is {location}</h1>}/>
+        <Route path='*' element={<Navigate to= '/'/>}/>
+        <Route path = '/dashboard' element={<DashboardLayout/>}>
+          <Route path = 'my' element= {<h1>Welcome to your profile info and pathname is {location}</h1>}/>
+          <Route path='courses' element={<Courses/>}/>
+          <Route path= 'courses/:id' element={<CourseDetails/>}/>
+          <Route path='*' element={<Navigate to= '/dashboard'/>}/>
+        </Route>
+        <Route path='/old-portal' element={<Navigate to='/dashboard/courses' replace />}/>
         </Route>
       </Routes>
     </div>
