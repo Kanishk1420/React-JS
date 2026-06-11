@@ -6,7 +6,7 @@
 - useLocation ✅
 - <Navigate/> component ✅
 - Protected Routes ✅
-- Layout Routes 
+- Layout Routes ✅
 - Lazy Loading Routes (Lazy and Suspense)
 - Data Router
 
