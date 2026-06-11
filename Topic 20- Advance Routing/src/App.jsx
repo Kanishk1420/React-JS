@@ -6,12 +6,15 @@ import { useMyLocation } from './components/uselocation'
 import DashboardLayout from './practice/DashboardLayout'
 import Courses from './practice/Courses'
 import { CourseDetails } from './practice/CourseDetails'
+import Login from './pages/Login'
+import  Proctected  from './components/Protected'
 const App = () => {
 const location = useMyLocation();
   return (
     <div>
       <Routes>
-        <Route element={<Home/>}>
+        <Route path='/login' element={<Login/>}/>
+        <Route element={<Proctected Component={Home}/>} >
         <Route path='/' element={<Welcome/>}/>
         <Route path='/Home' element={<h1>Welcome to Home and pathname is {location}</h1>}/>
         <Route path='/my' element={<h1>Welcome to my page and pathname is {location} </h1>}/>

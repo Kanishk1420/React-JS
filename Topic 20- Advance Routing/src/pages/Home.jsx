@@ -25,10 +25,13 @@ const Home = () => {
           Home
         </NavLink>
         <NavLink to="/" style={activeLinkStyle}>
-          Go back
+          Welcome
         </NavLink>
          <NavLink to="/dashboard" style={activeLinkStyle}>
           Dashboard
+        </NavLink>
+        <NavLink to="/login" style={activeLinkStyle} onClick={() => localStorage.removeItem("token")}>
+          Logout
         </NavLink>
       </nav>
       <Outlet />

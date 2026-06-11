@@ -5,8 +5,8 @@
 - useSearchParams and setSearchParams ✅
 - useLocation ✅
 - <Navigate/> component ✅
-- Protected Routes
-- Layout Routes
+- Protected Routes ✅
+- Layout Routes 
 - Lazy Loading Routes (Lazy and Suspense)
 - Data Router
 
