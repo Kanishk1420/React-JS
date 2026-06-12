@@ -1,13 +1,13 @@
-import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
-import Welcome from './pages/Welcome'
+import { lazy } from 'react'
+const Login = lazy(() => import('./pages/Login'))
 import { useMyLocation } from './components/uselocation'
-import DashboardLayout from './practice/DashboardLayout'
-import Courses from './practice/Courses'
-import { CourseDetails } from './practice/CourseDetails'
-import Login from './pages/Login'
-import  Proctected  from './components/Protected'
+const Home = lazy(() => import('./pages/Home'))
+const Welcome = lazy(() => import('./pages/Welcome'))
+const DashboardLayout = lazy(() => import('./practice/DashboardLayout'))
+const Courses = lazy(() => import('./practice/Courses'))
+const CourseDetails = lazy(() => import('./practice/CourseDetails'))
+const Proctected = lazy(() => import('./components/Protected'))
 const App = () => {
 const location = useMyLocation();
   return (
