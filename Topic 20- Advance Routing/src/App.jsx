@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
-import { lazy } from 'react'
-const Login = lazy(() => import('./pages/Login'))
+import { lazy, Suspense } from 'react'
 import { useMyLocation } from './components/uselocation'
+const Login = lazy(() => import('./pages/Login'))
 const Home = lazy(() => import('./pages/Home'))
 const Welcome = lazy(() => import('./pages/Welcome'))
 const DashboardLayout = lazy(() => import('./practice/DashboardLayout'))
@@ -12,6 +12,7 @@ const App = () => {
 const location = useMyLocation();
   return (
     <div>
+      <Suspense fallback={<h1>Loading...</h1>}>
       <Routes>
         <Route path='/login' element={<Login/>}/>
         <Route element={<Proctected Component={Home}/>} >
@@ -30,6 +31,7 @@ const location = useMyLocation();
         <Route path='/old-portal' element={<Navigate to='/dashboard/courses' replace />}/>
         </Route>
       </Routes>
+      </Suspense>
     </div>
   )
 }
