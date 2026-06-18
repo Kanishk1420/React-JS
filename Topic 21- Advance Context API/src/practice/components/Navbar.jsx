@@ -1,6 +1,5 @@
 import { Sun, Moon } from "lucide-react";
 import { useThemeContext } from "../../practice/context/contextUtils";
-
 const Navbar = () => {
   const { theme, setTheme } = useThemeContext();
 

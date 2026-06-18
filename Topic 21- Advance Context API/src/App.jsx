@@ -1,18 +1,28 @@
-// import Button from './components/Button';
-// import Navbar from './components/Navbar';
-import Navbar from './practice/components/Navbar';
 import LoginButton from './practice/components/LoginButton';
 import Cart from './practice/components/Cart';
-const App = () => {
-  return (
-    <div>
-      {/* <Navbar/>
-      <Button/> */}
-      <Navbar/>
-      <LoginButton/>
-      <Cart/>
-    </div>
-  )
-}
+import Navbar from './practice/components/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { useThemeContext } from './practice/context/contextUtils';
 
-export default App
+const App = () => {
+  const { theme } = useThemeContext();
+
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        backgroundColor: theme === 'white' ? '#ffffff' : '#1a1a1a',
+        color: theme === 'white' ? '#000000' : '#ffffff',
+        transition: 'all 0.3s ease',
+      }}
+    >
+      <Navbar />
+      <Routes>
+        <Route path='/login' element={<LoginButton />} />
+        <Route path='/cart' element={<Cart />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
