@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+.lightseagreen{
+  display: flex;
+  background-color: lightseagreen;
+  justify-content: space-between;
+  padding: 40px 40px;
+  border-radius: 10px;
+}
+
+.darkslategray{
+  display: flex;
+  background-color: darkslategray;
+  justify-content: space-between;
+  padding: 40px 40px;
+  border-radius: 10px;
+}
+.nav2{
+  display: flex;
+  gap: 30px;
+}
