@@ -3,7 +3,8 @@ import {
   useThemeContext,
 } from "../../practice/context/contextUtils";
 import Button from "./Button";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
+import axios from "axios";
 
 const Cart = () => {
   const { cart, setCart } = useCartContext();
@@ -15,14 +16,12 @@ const Cart = () => {
   const subText = isDark ? "#a3a3a3" : "#666666";
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch:", err);
-      });
+    const getdata = async () => {
+      const response = await axios.get("https://fakestoreapi.com/products/");
+      setProducts(response.data);
+      console.log(response.data);
+    };
+    getdata();
   }, []);
 
   const addToCart = (product) => {
@@ -48,7 +47,7 @@ const Cart = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          class="lucide lucide-shopping-basket-icon lucide-shopping-basket"
+          className="lucide lucide-shopping-basket-icon lucide-shopping-basket"
         >
           <path d="m15 11-1 9" />
           <path d="m19 11-4-7" />
@@ -130,7 +129,7 @@ const Cart = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-plus-icon lucide-plus"
+                  className="lucide lucide-plus-icon lucide-plus"
                 >
                   <path d="M5 12h14" />
                   <path d="M12 5v14" />
