@@ -4,10 +4,13 @@ import { useEffect } from "react";
 import { useAuthContext } from "../../practice/context/contextUtils";
 import Button from "./Button";
 import Input from "./Input";
+import { useId } from "react";
 const LoginButton = () => {
   const { user, pass } = useAuthContext();
   const username = user.username;
   const password = pass.password;
+  const use = useId();
+  const pas = useId();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +34,7 @@ const LoginButton = () => {
       <form onSubmit={handleSubmit}>
         <h1>Login Page</h1>
         <Input
-          id="username"
+          id={use}
           type="text"
           placeholder="Username"
           required
@@ -39,7 +42,7 @@ const LoginButton = () => {
           onChange={(e) => user.setusername(e.target.value)}
         />
         <Input
-          id="password"
+          id={pas}
           type="password"
           placeholder="Password"
           required

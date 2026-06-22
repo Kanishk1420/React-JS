@@ -18,7 +18,7 @@ const App = () => {
     >
       <Navbar />
       <Routes>
-        <Route path='/login' element={<LoginButton />} />
+        <Route path='/' element={<LoginButton />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
     </div>

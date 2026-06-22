@@ -1,10 +1,21 @@
 import { Sun, Moon } from "lucide-react";
-import { useThemeContext } from "../../practice/context/contextUtils";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import { useThemeContext, useAuthContext } from "../../practice/context/contextUtils";
 const Navbar = () => {
   const { theme, setTheme } = useThemeContext();
+  const { user, pass } = useAuthContext();
+  const navigate = useNavigate();
 
   const changeTheme = () => {
     setTheme(theme === "white" ? "dark" : "white");
+  };
+  
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    user.setusername("");
+    pass.setpassword("");
+    navigate("/");
   };
 
   return (
@@ -31,6 +42,11 @@ const Navbar = () => {
       >
         {theme === "white" ? <Moon size={24} /> : <Sun size={24} />}
       </button>
+      <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
+      {localStorage.getItem("token") && (
+        <Button onClick={handleLogout}>Logout</Button>
+      )}
+      </div>
     </div>
   );
 };
